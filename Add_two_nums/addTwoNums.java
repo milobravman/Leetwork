@@ -7,10 +7,9 @@ class Solution {
         String l1_As_str= "";
         String l2_As_str= "";
         while (l1 != null){
-            int value = l1.val;
-            System.out.println(value);
+            System.out.println(l1.getVal());
             System.out.println("value");
-            String value_as_str = String.valueOf(value) ;
+            String value_as_str = String.valueOf(l1.getVal()) ;
             //head.val = x;
             l1 = l1.next;
         }
@@ -18,9 +17,9 @@ class Solution {
     }
     public static void main(String[] args){
         Solution k = new Solution();
-        ListNode x = new ListNode();
-        ListNode y = new ListNode();
-        k.addTwoNumbers()
+        ListNode x = new ListNode(3);
+        ListNode y = new ListNode(4);
+        k.addTwoNumbers(x,y);
         System.out.println(k);
     }
 }
