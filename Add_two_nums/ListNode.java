@@ -16,7 +16,7 @@ public class ListNode {
 
         ListNode k = new ListNode(5);
         System.out.print(k.getVal());
-        System.out.println("k.getVal()");
+        System.out.println();
 
     }
 }
