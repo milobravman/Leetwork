@@ -35,69 +35,90 @@ class Solution {
  */
 // class Solution {
 //     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+        
+        
+
 //         ListNode head = new ListNode(0);
+//         ListNode interator = head;
+//         boolean carry_forward = false;
         
-//         String l1_As_str= "";
-//         String l2_As_str= "";
-//         while (l1 != null){
-//             String value_as_str = String.valueOf(l1.val) ;
-//             l1_As_str = l1_As_str + value_as_str;
-//             l1 = l1.next;
+//         int headVal = l1.val +l2.val;
+//         if(headVal > 9){
+//             headVal = headVal - 10;
+//             carry_forward = true;
 //         }
+//         head.val = headVal;
+//         l1 = l1.next;
+//         l2 = l2.next;
         
-//         while (l2 != null){
-//             String value_as_str = String.valueOf(l2.val) ;
-//             l2_As_str = l2_As_str + value_as_str;
-//             l2 = l2.next;
-//         }
+//         //head.val = headVal;
         
-//         String l1_As_str_r = "";
-//         String l2_As_str_r = "";
-        
-//         for (int i=0; i<l1_As_str.length(); i++)
-//         {
-//              char ch= l1_As_str.charAt(i); //extracts each character
-//              l1_As_str_r= ch+l1_As_str_r; //adds each character in front of the existing string
-//         }
-        
-//         for (int i=0; i<l2_As_str.length(); i++)
-//         {
-//              char ch= l2_As_str.charAt(i); //extracts each character
-//              l2_As_str_r= ch+l2_As_str_r; //adds each character in front of the existing string
-//         }
-        
-//         long l1_As_int = Long.parseLong(l1_As_str_r);
-//         long l2_As_int = Long.parseLong(l2_As_str_r);
-        
-//         long Final =  l1_As_int + l2_As_int;
-        
-//         String Final_s_pre_r = String.valueOf(Final);
+//         while (l1 != null || l2 != null){
+//             if (l1 != null && l2 != null){
+//                 if (carry_forward){
+//                     headVal = l1.val +l2.val +1;
+//                     carry_forward = false;
+//                 }else {
+//                     headVal = l1.val +l2.val;
+//                 }
+                
+//                 if(headVal > 9){
+//                     headVal = headVal - 10;
+//                     carry_forward = true;
+//                 }
+//                 ListNode temp = new ListNode(0);
+//                 interator.next = temp;
+//                 interator = interator.next;
+//                 interator.val = headVal;
+//                 l1 = l1.next;
+//                 l2 = l2.next;
+//             }
             
-//         String Final_r = "";
-        
-//         for (int i=0; i<Final_s_pre_r.length(); i++)
-//         {
-//              char ch= Final_s_pre_r.charAt(i); //extracts each character
-//              Final_r= ch+Final_r; //adds each character in front of the existing string
-//         }
-        
-//         // String test = "";
-//         // test = ""+ Final_r.charAt(0);
-        
-//         int temp = Character.getNumericValue(Final_r.charAt(0));
-//         head.val = temp;
-//         ListNode pointer = new ListNode();
-//         pointer = head;
-//         for (int i=1; i<Final_r.length(); i++)
-//         {
-//             int temp2 = Character.getNumericValue(Final_r.charAt(i));
-//             ListNode tempNode = new ListNode(temp2);
-//             pointer.next = tempNode;
-//             pointer = pointer.next;
+//             if (l1 != null && l2 == null){
+//                 if (carry_forward){
+//                     headVal = l1.val +1;
+//                     carry_forward = false;
+//                 }else {
+//                     headVal = l1.val;
+//                 }
+                
+//                 if(headVal > 9){
+//                     headVal = headVal - 10;
+//                     carry_forward = true;
+//                 }
+//                 ListNode temp = new ListNode(0);
+//                 interator.next = temp;
+//                 interator = interator.next;
+//                 interator.val = headVal;
+//                 l1 = l1.next;
+//             }
+            
+//             if (l1 == null && l2 != null){
+//                 if (carry_forward){
+//                     headVal = l2.val +1;
+//                     carry_forward = false;
+//                 }else {
+//                     headVal = l2.val;
+//                 }
+                
+//                 if(headVal > 9){
+//                     headVal = headVal - 10;
+//                     carry_forward = true;
+//                 }
+//                 ListNode temp = new ListNode(0);
+//                 interator.next = temp;
+//                 interator = interator.next;
+//                 interator.val = headVal;
+//                 l2 = l2.next;
+//             }
             
 //         }
         
-//         //head.val = Integer.parseInt(Final_r);
+//         if (carry_forward){
+//             ListNode temp = new ListNode(1);
+//             interator.next = temp;
+//         }
+        
         
 //         return head;
 //     }
